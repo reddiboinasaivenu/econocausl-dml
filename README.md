@@ -92,3 +92,71 @@ The data collection and preprocessing phase has been completed successfully. The
 - Initialize Directed Acyclic Graphs (DAGs) using DoWhy to represent causal relationships.
 - Prepare the data and modeling workflow for uplift estimation using EconML and Double Machine Learning (DML).
 
+
+# EconoCausal – Day 3 Work Report
+
+## Project Title
+**EconoCausal: Dynamic Pricing via Double Machine Learning (DML)**
+
+## Work Area
+Dataset Collection and Data Preprocessing
+
+## Objective
+To identify a suitable retail dataset and prepare it for subsequent project analysis through systematic data cleaning and preprocessing.
+
+## Work Completed
+
+### 1. Dataset Suitability Review
+- Reviewed the existing Starbucks dataset to determine its suitability for the dynamic-pricing project.
+- Selected the **Online Retail II dataset** because it contains transaction dates, product identifiers, and product descriptions.
+
+### 2. Dataset Collection and Organization
+- Obtained the Online Retail II Excel dataset.
+- Organized the raw dataset in the project's `Data/Raw` directory.
+- Communicated the dataset selection and progress updates with the project team.
+
+### 3. Data Preprocessing
+- Updated the preprocessing script to verify that the raw Excel dataset exists before loading it.
+- Loaded both worksheets from the Online Retail II dataset:
+  - Year 2009–2010: 525,461 rows
+  - Year 2010–2011: 541,910 rows
+- Combined the worksheets into a single dataset.
+- Standardized column names.
+- Removed duplicate records.
+- Converted date and numerical columns to appropriate data types.
+- Created additional derived fields:
+  - `is_return`: Identifies transactions with negative quantities.
+  - `customer_id_missing`: Indicates missing customer IDs.
+  - `transaction_value`: Represents the transaction value.
+
+### 4. Output Generation
+Generated the cleaned dataset locally at:
+
+`Data/Processed/online_retail_cleaned.csv`
+
+**Output dataset details:**
+- Rows: 1,055,238
+- Columns: 12
+- Format: CSV
+
+### 5. Version Control
+- Updated the preprocessing workflow with raw-file validation.
+- Committed and pushed the preprocessing validation update to the `data-prep` branch.
+- Generated the cleaned dataset locally for subsequent analysis.
+
+## Deliverables
+- Selected and organized the Online Retail II raw dataset.
+- Updated the preprocessing workflow with raw-file validation.
+- Generated the cleaned dataset containing 1,055,238 rows and 12 columns.
+- Pushed the preprocessing validation code update to the `data-prep` branch.
+
+## Project Status
+Dataset collection and preprocessing activities were completed for this work period. The Online Retail II dataset was consolidated, cleaned, and saved as a processed CSV file for future project analysis.
+
+## Conclusion
+During 19–20 October 2026, the work focused on dataset collection and preprocessing for the EconoCausal project. The Online Retail II dataset was selected, consolidated, cleaned, and saved as a local processed file. The preprocessing validation update was also committed and pushed to the project's `data-prep` branch.
+
+---
+**Project:** EconoCausal – Dynamic Pricing via Double Machine Learning (DML)  
+**Work Period:** 19–20 October 2026  
+**Branch:** `data-prep`

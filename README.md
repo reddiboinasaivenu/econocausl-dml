@@ -160,3 +160,76 @@ During 19–20 October 2026, the work focused on dataset collection and preproce
 **Project:** EconoCausal – Dynamic Pricing via Double Machine Learning (DML)  
 **Work Period:** 19–20 October 2026  
 **Branch:** `data-prep`
+
+
+
+## 📅 Day 4 — Data Preprocessing and DML Dataset Preparation
+
+**Date:** October 22, 2026  
+**Phase:** Data Collection & Preprocessing  
+**Role:** Data Collection & Preprocessing Specialist  
+**Branch:** `data-prep`  
+**Target PR:** `main`  
+**Status:** Completed
+
+### 🎯 Objective
+
+Complete the end-to-end data processing pipeline for the EconoCausal project by cleaning the Starbucks datasets and preparing the UK Online Retail II (2009–2011) dataset for Double Machine Learning (DML) estimation.
+
+### ✅ Tasks Completed
+
+#### 1. Starbucks Dataset Cleaning
+- Standardized and deduplicated `portfolio.json`, `profile.json`, and `transcript.json`.
+- Converted complex nested data types into string representations to support reliable deduplication.
+- Cleaned missing demographic information.
+
+#### 2. Online Retail II Dataset Consolidation
+- Merged the two yearly datasets into one unified dataset.
+- Consolidated the 2009–2010 dataset containing 525,461 rows and the 2010–2011 dataset containing 541,910 rows.
+- Prepared the consolidated data for further preprocessing and modeling.
+
+#### 3. DML Data Filtering and Cleaning
+Applied the following filtering rules to prepare the modeling dataset:
+
+- Removed return and cancellation records where the invoice number starts with `C`.
+- Removed records with `Quantity <= 0`.
+- Retained records with positive unit prices (`unit_price > 0`).
+- Removed records with missing `customer_id`.
+- Replaced missing product descriptions with `UNKNOWN`.
+- Removed exact duplicate rows across all fields.
+
+#### 4. Git LFS Configuration
+- Configured Git Large File Storage (LFS) to track large dataset files.
+- Added Git LFS tracking for `cleaned_online_retail_dml.csv`.
+- Prepared the approximately 83.9 MB CSV dataset for GitHub upload without standard Git file-size warnings.
+
+### 📂 Deliverables
+
+| File Path | Type | Description |
+|---|---|---|
+| `src/data_preprocessing.py` | Python script | Automated data cleaning pipeline and DML dataset exporter |
+| `Data/Processed/cleaned_online_retail_dml.csv` | CSV (approximately 83.9 MB) | Final DML modeling-ready dataset |
+| `.gitattributes` | Git LFS configuration | Tracks large CSV outputs using Git LFS |
+
+### 📊 Results
+
+- Successfully generated **793,609 clean records** for DML modeling.
+- Standardized and deduplicated the Starbucks datasets.
+- Consolidated the UK Online Retail II datasets into a unified dataset.
+- Applied filtering rules to remove invalid transactions and missing customer identifiers.
+- Configured Git LFS for handling the large processed CSV file.
+
+### 📁 Final Dataset Location
+
+```text
+Data/
+└── Processed/
+    └── cleaned_online_retail_dml.csv
+```
+
+### 🚀 Outcome
+
+Completed the data preprocessing pipeline and generated a clean, modeling-ready dataset for the EconoCausal Double Machine Learning project. The processed dataset and supporting preprocessing script are organized in the repository, with Git LFS configured for large-file tracking.
+
+**Day 4 Status: Completed ✅**
+

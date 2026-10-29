@@ -233,3 +233,89 @@ Completed the data preprocessing pipeline and generated a clean, modeling-ready 
 
 **Day 4 Status: Completed ✅**
 
+
+## 📅 Day 5 — Double Machine Learning (DML) Implementation and Initial Results
+
+**Project:** EconoCausal — Dynamic Pricing via Double Machine Learning  
+**Role:** Data Collection & Preprocessing Specialist  
+**Branch:** `data-prep`  
+**Treatment Variable:** `unit_price`  
+**Outcome Variable:** `quantity`
+
+### 🎯 Objective
+
+The objective was to implement an initial Double Machine Learning (DML) pipeline to estimate the effect of product price on purchase quantity. The work focused on preparing the modeling dataset, fitting machine-learning nuisance models, estimating individual treatment effects, and performing initial uplift and robustness analyses.
+
+### ✅ Tasks Completed
+
+- Prepared the modeling dataset using the cleaned Online Retail II transaction data.
+- Identified `unit_price` as the treatment variable and `quantity` as the outcome variable.
+- Selected product, geographic, and temporal covariates based on the preliminary causal Directed Acyclic Graph (DAG).
+- Implemented the `LinearDML` estimator from EconML.
+- Split the data into training and testing sets for model development and evaluation.
+- Trained nuisance models to predict the outcome (`quantity`) and treatment (`unit_price`) using the selected covariates.
+- Applied cross-fitting to reduce overfitting bias during nuisance estimation.
+- Generated Individual Treatment Effects (ITEs) for the test population.
+- Conducted an initial Qini uplift analysis to explore differences in estimated treatment effects.
+- Used DoWhy refutation checks, including placebo treatment, random common cause, and data-subset refuters, to examine the robustness of the initial estimates.
+
+### 📊 Initial Results
+
+- **Model:** EconML `LinearDML`
+- **Dataset:** UK Online Retail II (2009–2011)
+- **Modeling records:** 793,609
+- **Treatment:** `unit_price`
+- **Outcome:** `quantity`
+- **Mean estimated treatment effect:** Approximately `-0.86` quantity units per one-unit increase in price.
+
+The initial results indicate a negative relationship between product price and purchase quantity after adjusting for the selected covariates. The estimated mean effect is preliminary and depends on the current dataset, model specification, and causal identification assumptions.
+
+### 🛠️ Technologies Used
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- EconML
+- DoWhy
+- Git and Git LFS
+
+### 🔍 Analysis and Inferences
+
+The initial DML pipeline successfully generated Individual Treatment Effects, providing a foundation for analyzing how price sensitivity may vary across observations.
+
+The Qini uplift analysis was exploratory and requires further validation before it can support pricing decisions. The DoWhy refutation tests provide useful diagnostic checks but do not prove that all causal assumptions hold.
+
+The results suggest that higher prices may reduce purchase quantities under the current model specification. However, further analysis is required to evaluate uncertainty, overlap, unobserved confounding, and model sensitivity.
+
+### ⚠️ Limitations
+
+- The estimated effect has not yet been supported by confidence intervals or other uncertainty measures.
+- Unobserved factors, such as competitor prices, promotions, and stock availability, may influence the estimates.
+- Price overlap across product and time groups needs to be examined.
+- The Qini uplift analysis requires additional validation.
+- The findings should not be used for operational pricing decisions until the required robustness and validation checks are completed.
+
+### 🚀 Next Steps
+
+- Calculate confidence intervals for the mean treatment effect and individual effects where appropriate.
+- Perform data-quality checks for missing values, duplicates, outliers, and variable units.
+- Examine price overlap and positivity across product and time groups.
+- Conduct sensitivity analysis for unobserved confounding.
+- Compare alternative model specifications and baseline regression models.
+- Validate uplift performance.
+- Begin planning the SciPy budget-allocation solver and React experimentation dashboard.
+
+### 📁 Key Project Files
+
+| File | Purpose |
+|---|---|
+| `src/data_preprocessing.py` | Data cleaning and modeling dataset generation |
+| `Data/Processed/cleaned_online_retail_dml.csv` | Final DML modeling dataset |
+| `Data/data_dictionary.md` | Data dictionary documentation |
+| `README.md` | Project overview and execution instructions |
+| `.gitattributes` | Git LFS configuration |
+
+### 📝 Conclusion
+
+The initial Double Machine Learning implementation established a foundation for estimating the causal effect of product prices on purchase quantities. The pipeline generated individual treatment effects and a preliminary mean effect of approximately -0.86 quantity units per one-unit increase in price. Further statistical validation, sensitivity analysis, and uplift evaluation are required before using these findings for business pricing decisions.
+

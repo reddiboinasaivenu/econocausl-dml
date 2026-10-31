@@ -319,3 +319,86 @@ The results suggest that higher prices may reduce purchase quantities under the 
 
 The initial Double Machine Learning implementation established a foundation for estimating the causal effect of product prices on purchase quantities. The pipeline generated individual treatment effects and a preliminary mean effect of approximately -0.86 quantity units per one-unit increase in price. Further statistical validation, sensitivity analysis, and uplift evaluation are required before using these findings for business pricing decisions.
 
+## 📅 Day 6 — API & Packaging and Dashboard Refinement
+
+**Project:** EconoCausal – Dynamic Pricing Using Double Machine Learning  
+**Role:** Data Collection & Preprocessing Specialist  
+**Branch:** `data-prep`
+
+### 🎯 Objectives
+
+- Wrap the causal inference engine into a REST API.
+- Prepare the model for integration with the application.
+- Develop an automated data drift detection mechanism.
+- Improve the dashboard user experience.
+- Add natural language summaries to explain business results.
+
+### 1. API Development and Packaging
+
+- Planned to expose the EconoCausal causal engine through a REST API using FastAPI.
+- Designed the API workflow to accept customer and transaction data and return causal effect estimates.
+- Planned API endpoints for model predictions, treatment effect estimation, and model health monitoring.
+- Prepared the integration approach for connecting the Python-based causal engine with the React dashboard.
+- Focused on making the model accessible, reusable, and easier to deploy.
+
+### 2. Automated Data Drift Detection
+
+- Planned an automated data drift detection mechanism to monitor changes in incoming customer and transaction data.
+- Identified important variables such as `unit_price`, `quantity`, product information, and transaction dates for monitoring.
+- Planned to compare incoming data distributions with the reference training dataset.
+- Designed the system to generate warnings when significant changes in customer purchasing behavior or data distributions are detected.
+- This monitoring process will help identify when the causal model may require validation or retraining.
+
+### 3. Dashboard Refinement and Improvements
+
+- Planned improvements to the React-based dashboard to make analytical results easier to understand.
+- Focused on presenting causal estimates, customer responsiveness, and business performance metrics clearly.
+- Planned to improve the visualization of Qini uplift curves and targeting efficiency.
+- Worked toward creating a simple and user-friendly interface for business stakeholders.
+
+### 4. Natural Language Business Summaries
+
+- Planned to introduce automatically generated natural language summaries.
+- The summaries will explain model results in simple business language.
+- Designed example messages such as:
+
+  - "This strategy saves $4,200 compared to blanket targeting."
+  - "Targeted pricing provides better efficiency than applying the same strategy to all customers."
+  - "The model identifies customers with different levels of price responsiveness."
+
+- Planned to calculate savings and performance comparisons using actual model outputs rather than fixed values.
+
+### 5. Expected Benefits
+
+- Improved accessibility of the causal inference engine through REST APIs.
+- Easier integration between the backend model and frontend dashboard.
+- Early warnings when incoming customer behavior changes.
+- Better monitoring of model reliability.
+- Improved understanding of causal analysis through simple business summaries.
+- Better support for data-driven pricing and customer-targeting decisions.
+
+### 6. Current Status
+
+| Component | Status |
+|---|---|
+| Causal engine | Initial implementation available |
+| FastAPI REST API | Planned / In Progress |
+| API packaging | Planned |
+| Data drift detector | Planned |
+| React dashboard integration | Planned |
+| Natural language summaries | Planned |
+| Deployment and testing | Pending |
+
+### 7. Next Steps
+
+- Implement and test FastAPI endpoints.
+- Connect the API with the existing causal inference engine.
+- Develop statistical data drift monitoring.
+- Integrate drift warnings into the dashboard.
+- Implement dynamic business summaries using actual model results.
+- Perform end-to-end API and dashboard testing.
+
+### Conclusion
+
+Day 6 focuses on moving the EconoCausal project toward a deployable and user-friendly causal AI application. The main objectives are to expose the causal engine through REST APIs, monitor changes in customer behavior using automated data drift detection, and improve the React dashboard with meaningful visualizations and natural language business summaries. These improvements will help transform causal analysis results into understandable and actionable business insights.
+

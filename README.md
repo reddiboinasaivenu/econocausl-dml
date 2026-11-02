@@ -484,4 +484,117 @@ The dashboard is designed to display simple business-oriented explanations, such
 - "Optimized targeting helps reduce unnecessary campaign spending
 
 
+## 📅 Day 8 — Prescriptive Optimization & Revenue Maximization
+
+### 🎯 Objective
+
+Develop a prescriptive optimization module using **SciPy** to maximize total predicted revenue while satisfying a strict Allocation Matrix. The objective is to convert causal model predictions into actionable pricing and resource-allocation recommendations.
+
+### 1. Prescriptive Optimization Using SciPy
+
+- Implemented an optimization framework using Python's SciPy optimization library.
+- Designed an objective function to maximize total predicted revenue.
+- Integrated predicted revenue values from the causal estimation pipeline.
+- Defined decision variables representing allocation quantities across eligible products or customer segments.
+- Applied optimization constraints to ensure that all allocation decisions follow the predefined Allocation Matrix.
+- Used constrained optimization to identify the best feasible allocation strategy.
+
+### 2. Strict Allocation Matrix
+
+Designed an Allocation Matrix to control how available resources are distributed.
+
+Key considerations:
+
+- Enforced predefined allocation limits.
+- Prevented allocations to restricted or ineligible segments.
+- Ensured that total allocated resources did not exceed the available budget.
+- Applied upper and lower bounds to decision variables.
+- Validated the optimized allocation against all matrix constraints.
+
+**Purpose:** Ensure that the optimization engine generates feasible, controlled, and business-relevant recommendations rather than unrestricted allocations.
+
+### 3. Revenue Maximization
+
+The optimization engine evaluates possible allocation combinations and selects the configuration that produces the highest predicted total revenue.
+
+**Optimization Objective:**
+
+Maximize:
+
+`Total Predicted Revenue = Σ (Predicted Revenue × Allocation)`
+
+Subject to:
+
+- Total allocation ≤ Available Budget
+- Allocation Matrix restrictions
+- Minimum allocation requirements
+- Maximum allocation limits
+- Non-negative decision variables
+
+### 4. Final Prescription UI — Dashboard Development
+
+Designed the UI view to display the final optimization results in a clear and understandable format.
+
+The Prescription dashboard includes:
+
+- Product or customer segment identification.
+- Current allocation values.
+- Recommended allocation values.
+- Predicted revenue contribution.
+- Allocation status.
+- Optimization results.
+
+### 5. Final Prescription Table
+
+The dashboard presents the optimization output in a structured table.
+
+| Parameter | Description |
+|---|---|
+| Product / Segment | Target product or customer group |
+| Current Allocation | Existing resource allocation |
+| Recommended Allocation | Optimized allocation |
+| Predicted Revenue | Expected revenue contribution |
+| Allocation Status | Within or outside permitted limits |
+
+The final table helps stakeholders understand exactly where resources should be allocated and how the recommended strategy supports revenue maximization.
+
+### 6. Technology Stack
+
+- **Python:** Optimization logic and backend processing.
+- **SciPy:** Constrained numerical optimization.
+- **NumPy:** Numerical calculations and allocation matrices.
+- **Pandas:** Data processing and optimization result tables.
+- **React:** Prescription dashboard interface.
+- **Plotly.js:** Interactive revenue and allocation visualizations.
+
+### 7. Expected Deliverables
+
+| Deliverable | Purpose |
+|---|---|
+| `prescriptive_optimization.py` | SciPy revenue optimization engine |
+| Allocation Matrix | Defines strict allocation restrictions |
+| Optimized Allocation | Stores recommended allocation values |
+| Prescription Table | Displays final recommendations |
+| Dashboard UI | Visualizes optimization results |
+
+### 8. Key Achievements
+
+- Developed the structure for a SciPy-based prescriptive optimization engine.
+- Defined revenue maximization as the primary optimization objective.
+- Incorporated strict Allocation Matrix constraints into the optimization design.
+- Connected causal predictions with actionable allocation recommendations.
+- Designed a structured Prescription table for the dashboard.
+- Improved decision transparency by presenting recommended allocations and predicted revenue contributions.
+
+### 9. Next Steps
+
+- Validate the optimization results against all Allocation Matrix restrictions.
+- Compare optimized revenue with the existing allocation strategy.
+- Integrate the optimization engine with the causal prediction API.
+- Complete the React Prescription dashboard.
+- Test the system using different budgets and allocation scenarios.
+
+### 📌 Day 8 Outcome
+
+Day 8 focused on moving EconoCausal from causal prediction toward prescriptive decision-making. The optimization framework uses SciPy to identify revenue-maximizing allocation decisions while respecting strict business constraints. The final Prescription UI is designed to translate optimization outputs into an understandable table of recommended allocations, helping stakeholders make data-driven pricing and resource-allocation decisions.
 

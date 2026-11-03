@@ -598,3 +598,40 @@ The final table helps stakeholders understand exactly where resources should be 
 
 Day 8 focused on moving EconoCausal from causal prediction toward prescriptive decision-making. The optimization framework uses SciPy to identify revenue-maximizing allocation decisions while respecting strict business constraints. The final Prescription UI is designed to translate optimization outputs into an understandable table of recommended allocations, helping stakeholders make data-driven pricing and resource-allocation decisions.
 
+
+## 📅 Day 9 — Vision Transformer (ViT) Integration
+
+### 🎯 Objective
+Integrate a Vision Transformer (ViT) architecture into the existing model using a self-attention mechanism to improve prediction accuracy by identifying complex relationships and patterns across different light spectrums.
+
+### 🚀 Tasks Completed
+
+- Studied the Vision Transformer (ViT) architecture and its self-attention mechanism.
+- Explored how transformer-based models capture relationships between different input features.
+- Designed the integration of ViT into the existing machine learning workflow.
+- Implemented the concept of patch embedding to convert input data into a suitable representation for transformer processing.
+- Incorporated positional embeddings to preserve the positional information of input patches.
+- Applied multi-head self-attention to identify complex correlations across different light spectrums.
+- Explored feature extraction and representation learning using transformer encoder layers.
+- Focused on improving the model's ability to understand spectral patterns and relationships.
+
+### 🧠 Vision Transformer Architecture
+
+The Vision Transformer processes input data through the following stages:
+
+1. **Input Processing:** Prepare and normalize the input spectral data.
+2. **Patch Embedding:** Divide the input representation into smaller patches and convert them into embeddings.
+3. **Positional Embedding:** Add positional information to maintain the relationships between patches.
+4. **Multi-Head Self-Attention:** Identify important relationships and dependencies across different spectral features.
+5. **Transformer Encoder:** Process the embedded representations using attention and feed-forward layers.
+6. **Feature Extraction:** Generate meaningful feature representations for prediction.
+7. **Output Layer:** Pass the extracted features to the prediction layer.
+
+### 🔬 Self-Attention Mechanism
+
+- Helps the model focus on important spectral features.
+- Captures long-range dependencies between different light spectrums.
+- Identifies complex relationships that traditional feature extraction methods may overlook.
+- Combines information from multiple attention heads to generate richer feature representations.
+- Supports improved feature learning and prediction performance.
+

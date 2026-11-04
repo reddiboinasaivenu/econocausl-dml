@@ -635,3 +635,68 @@ The Vision Transformer processes input data through the following stages:
 - Combines information from multiple attention heads to generate richer feature representations.
 - Supports improved feature learning and prediction performance.
 
+
+## 📅 Day 10 — API & Packaging and Automated Data Drift Detection
+
+### Objective
+The main objective of Day 10 was to integrate the EconoCausal Double Machine Learning (DML) engine into a REST API and develop an automated data drift detection mechanism to identify changes in customer behavior and maintain the reliability of causal predictions.
+
+### Tasks Completed
+
+**1. REST API Development**
+- Designed a REST API to expose the EconoCausal causal inference engine.
+- Integrated the causal estimation workflow with API endpoints.
+- Enabled external applications to send customer and pricing data through API requests.
+- Structured API responses to return predicted outcomes and estimated treatment effects.
+- Improved communication between the backend causal engine and the frontend dashboard.
+
+**2. Causal Engine Integration**
+- Connected the Double Machine Learning pipeline with the API layer.
+- Enabled the API to process input data and generate causal effect estimates.
+- Organized the prediction workflow for easier integration and deployment.
+- Improved the modularity and maintainability of the application.
+
+**3. Automated Data Drift Detection**
+- Developed a data drift monitoring approach to identify changes in incoming customer data.
+- Compared new customer behavior data against the reference dataset.
+- Monitored changes in important features and customer behavior patterns.
+- Implemented warning notifications when significant distribution changes were detected.
+- Designed the monitoring process to help identify situations where the existing causal model may require reassessment.
+
+**4. API Packaging**
+- Organized the causal engine and API components into a structured application.
+- Prepared the application for integration with the frontend dashboard.
+- Improved code organization and reusability.
+- Prepared the system for future deployment and production integration.
+
+### Key Outcomes
+- Established a REST API architecture for the causal inference engine.
+- Connected the DML workflow with an API-based application structure.
+- Designed automated data drift monitoring for changing customer behavior.
+- Improved the system's maintainability and integration readiness.
+- Established a foundation for reliable and scalable causal pricing recommendations.
+
+### Technologies Used
+- Python
+- REST API
+- Double Machine Learning (DML)
+- Pandas
+- NumPy
+- Scikit-learn
+- Data Drift Detection
+- JSON
+- FastAPI / Flask (depending on the framework implemented)
+
+### Project Status
+- [x] REST API architecture and integration
+- [x] Causal engine API preparation
+- [x] Automated data drift detection approach
+- [x] API packaging and organization
+- [x] Preparation for deployment and dashboard integration
+
+### Next Steps
+- Test API endpoints with different input datasets.
+- Validate the accuracy and reliability of drift detection.
+- Integrate API responses into the React dashboard.
+- Implement appropriate alerts for detected data drift.
+- Prepare the complete application for deployment.

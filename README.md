@@ -700,3 +700,168 @@ The main objective of Day 10 was to integrate the EconoCausal Double Machine Lea
 - Integrate API responses into the React dashboard.
 - Implement appropriate alerts for detected data drift.
 - Prepare the complete application for deployment.
+
+
+# Day 11 – Prescriptive Optimization, API Development & Dashboard Refinement
+
+## 1. Prescriptive Optimization Using SciPy
+
+Implemented a prescriptive optimization approach using **SciPy** to maximize total predicted revenue while maintaining a strict marketing budget constraint.
+
+### Key Activities
+- Used customer-level treatment effects from the causal engine.
+- Developed an optimization model to assign personalized discounts.
+- Maximized total predicted revenue for selected customers.
+- Applied budget constraints to prevent overspending.
+- Used `scipy.optimize.minimize()` to calculate optimal discount allocations.
+- Added lower and upper bounds to control discount amounts.
+
+### Objective Function
+The optimization model aims to maximize:
+
+- Total predicted revenue.
+- Customer-level revenue uplift.
+- Marketing budget utilization efficiency.
+
+The optimization problem is formulated as:
+
+\[
+\max_{d_1,\ldots,d_n}\sum_{i=1}^{n}R_i(d_i)
+\]
+
+Subject to:
+
+\[
+\sum_{i=1}^{n}C_i(d_i)\leq B
+\]
+
+Where:
+- \(d_i\) = Personalized discount for customer i.
+- \(R_i\) = Predicted revenue.
+- \(C_i\) = Marketing cost.
+- \(B\) = Total marketing budget.
+
+## 2. Allocation Matrix – Customer Prescription
+
+Developed an Allocation Matrix to display the mathematically optimized discount recommendations for individual customers.
+
+### Key Activities
+- Generated customer-level discount recommendations.
+- Displayed customer IDs and optimal discount amounts.
+- Included predicted revenue and expected uplift.
+- Identified customers receiving the highest optimization benefits.
+- Presented the final prescription in a structured dashboard table.
+
+### Prescription Table
+
+| Customer ID | Optimal Discount | Predicted Revenue | Recommendation |
+|---|---:|---:|---|
+| C001 | 10% | 250 | High Priority |
+| C002 | 5% | 180 | Medium Priority |
+| C003 | 15% | 320 | High Priority |
+| C004 | 0% | 150 | No Discount |
+
+*Note: These are illustrative values. Actual recommendations must come from the optimization model.*
+
+## 3. REST API Development and Packaging
+
+Wrapped the causal engine in a REST API to make the optimization and prediction functionality accessible to other applications.
+
+### Key Activities
+- Used Python and FastAPI to develop REST endpoints.
+- Integrated the trained causal inference model.
+- Created endpoints for customer-level predictions.
+- Enabled personalized discount recommendations through API requests.
+- Added input validation and error handling.
+- Prepared the application for deployment and integration with the dashboard.
+
+### API Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | Check API status |
+| GET | `/health` | Health monitoring |
+| POST | `/predict` | Generate causal predictions |
+| POST | `/optimize` | Generate optimal discount allocations |
+| GET | `/prescriptions` | Retrieve customer prescriptions |
+| GET | `/drift` | Check data drift status |
+
+## 4. Automated Data Drift Detection
+
+Implemented a data drift monitoring approach to identify changes in customer behavior and incoming data distributions.
+
+### Key Activities
+- Compared reference and current customer datasets.
+- Monitored important features such as unit price, quantity, and transaction patterns.
+- Identified statistical changes in incoming data.
+- Generated warnings when significant distribution changes were detected.
+- Supported model reliability through continuous monitoring.
+
+### Drift Detection Workflow
+
+1. Load the reference dataset.
+2. Load newly collected customer data.
+3. Compare feature distributions.
+4. Calculate statistical drift indicators.
+5. Generate alerts when drift exceeds the configured threshold.
+6. Recommend model evaluation or retraining when necessary.
+
+## 5. Dashboard Refinement and Natural Language Summaries
+
+Improved the dashboard to make optimization results easier to understand for business users.
+
+### Key Activities
+- Refined the dashboard layout and user interface.
+- Integrated the final customer Allocation Matrix.
+- Displayed optimized discounts and predicted revenue.
+- Added marketing budget utilization metrics.
+- Included optimization performance comparisons.
+- Generated simple natural-language business summaries.
+
+### Example Business Insights
+
+- Personalized discounts improve marketing budget allocation.
+- The optimization model identifies customers with higher expected revenue uplift.
+- The budget constraint prevents excessive marketing expenditure.
+- Customers with low expected incremental benefit can receive smaller discounts or no discount.
+
+Example summary:
+
+"This strategy saves $4,200 compared to blanket targeting."
+
+*The $4,200 figure is an illustrative example, not a measured project result. Actual savings should be calculated from the optimized and baseline strategies.*
+
+## 6. Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Python | Core implementation |
+| SciPy | Prescriptive optimization |
+| NumPy | Numerical calculations |
+| Pandas | Data processing |
+| FastAPI | REST API development |
+| Scikit-learn | Machine learning and statistical monitoring |
+| EconML | Causal effect estimation |
+| DoWhy | Causal inference validation |
+| React | Dashboard development |
+| Plotly.js | Interactive visualizations |
+
+## 7. Expected Project Outcomes
+
+- Developed a budget-constrained optimization framework.
+- Generated personalized customer discount recommendations.
+- Created a structured customer prescription table.
+- Prepared REST API endpoints for causal predictions and optimization.
+- Established automated data drift monitoring.
+- Improved dashboard usability through natural-language business insights.
+- Connected causal inference with practical business decision-making.
+
+## 8. Conclusion
+
+Day 11 focused on transforming the EconoCausal DML project from causal effect estimation into a practical prescriptive decision-support system.
+
+The SciPy optimization module determines personalized discount allocations under strict budget constraints. The Allocation Matrix presents the final customer-level prescriptions. FastAPI provides access to the causal engine, while automated drift detection monitors changes in customer behavior.
+
+Finally, dashboard refinements and natural-language summaries make the results easier for stakeholders to interpret and use in marketing and pricing decisions.
+
+**Status:** Day 11 – Prescriptive Optimization, API Development, Data Drift Detection, and Dashboard Refinement.

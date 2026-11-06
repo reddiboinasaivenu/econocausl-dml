@@ -865,3 +865,27 @@ The SciPy optimization module determines personalized discount allocations under
 Finally, dashboard refinements and natural-language summaries make the results easier for stakeholders to interpret and use in marketing and pricing decisions.
 
 **Status:** Day 11 – Prescriptive Optimization, API Development, Data Drift Detection, and Dashboard Refinement.
+
+
+## Day 12 – Project Status & Technical Documentation
+
+### 1. Project Overview
+EconoCausal is a Causal AI-based project designed to improve promotional campaign efficiency by identifying the true causal impact of discounts on customer conversions.
+
+Traditional predictive machine learning models estimate correlations rather than actual causal relationships. EconoCausal uses Double Machine Learning (DML) to calculate Individual Treatment Effects (ITE) and optimize promotional spending.
+
+### 2. Project Objectives
+- Implement Double Machine Learning (DML) for causal effect estimation.
+- Use Directed Acyclic Graphs (DAGs) to identify causal relationships.
+- Apply propensity score matching to balance observational campaign data.
+- Optimize personalized discount allocation under strict budget constraints.
+- Develop an interactive dashboard to visualize uplift and campaign efficiency.
+
+### 3. Core Modules and Technologies
+
+| Module | Technologies | Description |
+|---|---|---|
+| Causal Engine | Python, EconML, DoWhy | Implements DML and DAGs. |
+| Statistical Match | Scikit-learn | Performs propensity score matching. |
+| Prescriptive Solver | SciPy Optimization | Allocates personalized discounts within budget limits. |
+| Experiment UI | React, Plotly.js | Displays

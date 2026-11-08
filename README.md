@@ -889,3 +889,26 @@ Traditional predictive machine learning models estimate correlations rather than
 | Statistical Match | Scikit-learn | Performs propensity score matching. |
 | Prescriptive Solver | SciPy Optimization | Allocates personalized discounts within budget limits. |
 | Experiment UI | React, Plotly.js | Displays
+
+
+## 📅 Day 13 — Causal Graphing & Dashboard Scaffolding
+
+**Project:** EconoCausal – Dynamic Pricing Using Double Machine Learning  
+**Focus:** DoWhy Causal DAG Implementation & React Dashboard Initialization
+
+### 1. Causal Graphing Using DoWhy
+
+- Used Microsoft's DoWhy library to define a Directed Acyclic Graph (DAG) for a mock retail campaign dataset.
+- Identified the key causal variables required for the analysis.
+- Defined the treatment, outcome, and potential confounding variables.
+- Established the relationships between customer characteristics, promotional discounts, and retail sales.
+- Prepared the causal structure to support future causal effect estimation.
+
+### 2. Identification of Causal Variables
+
+The following variables were considered for the mock retail dataset:
+
+| Variable Type | Variables | Description |
+|---|---|---|
+| Treatment | Discount Amount | Promotional discount assigned to customers |
+| Outcome | Sales

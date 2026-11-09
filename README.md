@@ -912,3 +912,68 @@ The following variables were considered for the mock retail dataset:
 |---|---|---|
 | Treatment | Discount Amount | Promotional discount assigned to customers |
 | Outcome | Sales
+
+
+## 📅 Day 14 — Double Machine Learning Training & Uplift Visualization
+
+**Project:** EconoCausal – Dynamic Pricing Using Double Machine Learning  
+**Phase:** Causal Model Training and Performance Evaluation  
+**Technologies:** Python, EconML, Scikit-learn, Random Forest, LightGBM, React, Plotly.js
+
+### 1. Objective
+The main objective of Day 14 was to strengthen the EconoCausal causal inference engine by training Double Machine Learning (DML) models and estimating Individual Treatment Effects (ITE).
+
+The work also focused on integrating interactive visualizations to evaluate the performance of the causal model using Qini curves and Uplift charts.
+
+### 2. Double Machine Learning Model Training
+- Used the cleaned Online Retail II dataset for causal model training.
+- Defined `unit_price` as the treatment variable.
+- Defined `quantity` as the outcome variable.
+- Selected relevant product, geographical, and time-related variables as confounders.
+- Used EconML to implement the Double Machine Learning framework.
+- Evaluated Random Forest and LightGBM as potential machine learning base estimators.
+- Applied cross-fitting to reduce overfitting and improve estimation reliability.
+- Generated Individual Treatment Effects (ITE) to understand how price changes affect purchasing quantity across observations.
+
+### 3. Individual Treatment Effect (ITE) Estimation
+ITE estimation helps identify how different observations respond to changes in product prices.
+
+The estimated treatment effects can support:
+- Identifying price-sensitive customer and product segments.
+- Understanding variations in purchasing behavior.
+- Evaluating the impact of price changes on purchase quantity.
+- Supporting personalized and data-driven pricing decisions.
+
+### 4. Qini Curves and Uplift Visualization
+Integrated Plotly.js into the EconoCausal experimentation dashboard to visualize causal model performance.
+
+**Key visualization components:**
+- **Qini Curve:** Evaluates how effectively the model ranks observations based on estimated treatment effects.
+- **Uplift Chart:** Displays the estimated incremental impact of a treatment across different targeting groups.
+- **Random Baseline:** Provides a benchmark to compare model-guided targeting against random targeting.
+- **Model Performance Comparison:** Helps evaluate whether causal model-based targeting provides better results than a random rollout.
+
+### 5. Technology Stack
+
+| Component | Technology |
+|---|---|
+| Causal Inference | EconML |
+| Base Estimators | Random Forest / LightGBM |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | Scikit-learn |
+| Visualization | Plotly.js |
+| Frontend | React |
+| Programming Language | Python |
+
+### 6. Expected Deliverables
+- EconML Double Machine Learning training pipeline.
+- Individual Treatment Effect estimation outputs.
+- Random Forest and LightGBM estimator configurations.
+- Interactive Qini curve visualization.
+- Uplift analysis charts with a random targeting baseline.
+- Model evaluation outputs for comparing targeting strategies.
+
+### 7. Conclusion
+Day 14 focused on advancing the EconoCausal project from initial causal effect estimation toward model evaluation and interactive visualization.
+
+The integration of EconML and

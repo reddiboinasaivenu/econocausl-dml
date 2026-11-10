@@ -977,3 +977,109 @@ Integrated Plotly.js into the EconoCausal experimentation dashboard to visualize
 Day 14 focused on advancing the EconoCausal project from initial causal effect estimation toward model evaluation and interactive visualization.
 
 The integration of EconML and
+
+
+## 📅 Day 15 — Double Machine Learning Training & Uplift Visualization
+
+### 1. Objective
+
+The main objective of Day 15 was to strengthen the EconoCausal causal inference engine by training Double Machine Learning (DML) models using the EconML framework and developing interactive visualizations to evaluate treatment-effect performance.
+
+The implementation focuses on estimating Individual Treatment Effects (ITE) and comparing the performance of a causal targeting strategy against a random rollout strategy.
+
+### 2. Technologies and Libraries Used
+
+- **Python** — Model development and data processing.
+- **EconML** — Double Machine Learning and causal effect estimation.
+- **Scikit-learn** — Machine learning base estimators.
+- **Random Forest / LightGBM** — Base models for nuisance estimation.
+- **Pandas & NumPy** — Data manipulation and numerical operations.
+- **Plotly.js** — Interactive charts and data visualization.
+- **React.js** — Dashboard integration.
+
+### 3. Double Machine Learning Model Training
+
+The EconML framework was used to develop the Double Machine Learning pipeline.
+
+**Key implementation steps:**
+
+1. Loaded the cleaned retail dataset from the preprocessing pipeline.
+2. Defined `unit_price` as the treatment variable.
+3. Defined `quantity` as the outcome variable.
+4. Selected product, geographical, and time-related features as confounding variables.
+5. Prepared training and testing datasets.
+6. Configured Random Forest or LightGBM as machine learning base estimators.
+7. Applied cross-fitting to reduce overfitting and estimation bias.
+8. Trained the DML estimator using the selected features.
+9. Generated Individual Treatment Effect (ITE) estimates.
+
+### 4. Individual Treatment Effect (ITE) Estimation
+
+ITE estimation helps identify how changes in product prices affect purchasing quantities across individual observations.
+
+**Key benefits:**
+
+- Identifies differences in customer price sensitivity.
+- Measures heterogeneous treatment effects.
+- Helps understand product-level demand responses.
+- Supports personalized dynamic pricing decisions.
+- Provides causal insights for business optimization.
+
+### 5. Uplift Analysis Using Plotly.js
+
+Plotly.js was integrated into the project dashboard to visualize the performance of the causal model.
+
+**Visualization components:**
+
+- **Qini Curve:** Measures the cumulative incremental impact of targeting observations based on estimated treatment effects.
+- **Uplift Chart:** Visualizes the incremental response achieved through causal targeting.
+- **Random Baseline:** Provides a benchmark representing random targeting.
+- **Causal Model Performance:** Helps evaluate whether ITE-based targeting performs better than random allocation.
+
+The visual comparison is designed to demonstrate whether the causal model can identify more valuable targeting opportunities than a random rollout.
+
+### 6. Expected Outputs
+
+| Component | Expected Output |
+|---|---|
+| DML Model | Trained EconML estimator |
+| ITE Estimation | Individual treatment-effect values |
+| Qini Curve | Cumulative uplift performance |
+| Uplift Chart | Targeting effectiveness visualization |
+| Random Baseline | Benchmark for comparison |
+| React Dashboard | Interactive visualization interface |
+
+### 7. Business Impact
+
+The Day 15 implementation supports the development of an intelligent dynamic pricing system.
+
+- Improves customer-level pricing insights.
+- Identifies observations with different treatment responses.
+- Helps reduce ineffective promotional spending.
+- Supports better pricing and targeting strategies.
+- Provides visual evidence for evaluating causal model performance.
+
+### 8. Challenges and Considerations
+
+- Selecting suitable base estimators.
+- Managing computational requirements for large datasets.
+- Avoiding overfitting during model training.
+- Ensuring reliable ITE estimation.
+- Correctly calculating Qini and uplift metrics.
+- Comparing causal targeting with a fair random baseline.
+
+### 9. Conclusion
+
+Day 15 focused on advancing the EconoCausal project through Double Machine Learning model training and uplift visualization.
+
+The EconML framework provides the foundation for estimating Individual Treatment Effects, while Plotly.js enables interactive visualization of Qini curves and uplift charts.
+
+Together, these components help evaluate causal targeting strategies and support the development of data-driven dynamic pricing solutions.
+
+### 10. Next Steps
+
+- Validate and compare different DML model configurations.
+- Improve ITE estimation through hyperparameter tuning.
+- Evaluate Qini and uplift performance against suitable baselines.
+- Integrate causal model outputs with the budget optimization module.
+- Prepare the model for API and dashboard integration.
